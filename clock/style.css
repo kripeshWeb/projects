@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(14, 13, 13);
+    overflow: hidden;
+}
+.clock{
+    width: 20rem;
+    height: 20rem;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(29, 27, 27);
+}
+.clock::after{
+    content: "";
+    border-radius: 50% ;
+    background-color: white;
+    width: 0.8rem;
+    height: 0.8rem;
+    z-index: 2;
+    
+}
+.clock #hr,
+.clock #min,
+.clock #sec{
+    width: 4px;
+    height: 7.5rem;
+    background-color: red;
+    position: absolute;
+    bottom: 50%;
+    transform-origin:bottom;
+    border-radius: 15px;
+}
+.clock #hr{
+    height: 6rem;
+    width: 6px;
+    background-color: blue;
+}
+.clock #min{
+    height: 7rem;
+    width: 5px;
+    background-color: purple;
+}
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--var)));
+    inset: 12px;
+}
+.clock span b{
+    transform: rotate(calc(-30deg * var(--var)));
+    display: inline-block;
+    inset: 12px;
+}
+
+
+@keyframes animation{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
